@@ -32,7 +32,7 @@ chdir   ( $PATHTOREPOSITORY )    ;
     {
         echo "<ul>\n"                                   ;
         echo "<li>"; var_dump ( $d) ; echo "</li>"      ;
-        echo $d -> read()                               ;
+        echo "<li>"; var_dump $d -> read(); echo "</li>";
         while (false !== ($entry = $d->read()))
         {
            if( is_dir( $entry) )
