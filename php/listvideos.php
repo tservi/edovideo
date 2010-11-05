@@ -9,8 +9,6 @@
 
 $PATHTOREPOSITORY = 'repository' ;
 
-chdir   ( $PATHTOREPOSITORY )    ;
-
 ?>
 <html>
     <head>
@@ -28,10 +26,13 @@ chdir   ( $PATHTOREPOSITORY )    ;
             }
     }
 
-    function parseDir ( $d )
+    function parseDir ( $path )
     {
+        chdir   ( $path )    ;   
+        echo "<!-- " . getcwd() . " -->\n"                  ;
+        $d = dir( '.' )                                     ;
         echo "<ul>\n"                                   ;
-        echo "<li>"; var_dump ( $d) ; echo "</li>"      ;
+        echo "<li>"; var_dump ( $d ) ; echo "</li>"      ;
         echo "<li>"; var_dump ( $d -> read() ); echo "</li>";
         while (false !== ($entry = $d->read()))
         {
@@ -50,12 +51,12 @@ chdir   ( $PATHTOREPOSITORY )    ;
         echo "</ul>\n"                                  ;
         $d->close()                                     ;      
     }
-    
-    echo "<!-- " . getcwd() . " -->\n"                  ;
-    $d = dir( '.' )                                     ;
+
+    //chdir   ( $PATHTOREPOSITORY )    ;   
+    //echo "<!-- " . getcwd() . " -->\n"                  ;
     //echo "Pointeur : " . $d->handle . "\n";
     //echo "Chemin : " . $d->path . "\n";
-    parseDir( $d )                                      ;    
+    parseDir( $PATHTOREPOSITORY )                                      ;    
 ?>
     </body>
 </html>
