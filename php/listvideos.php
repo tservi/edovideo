@@ -21,7 +21,7 @@ $PATHTOREPOSITORY = 'repository' ;
         <script type="text/javascript" src="http://jquery.bassistance.de/treeview/jquery.treeview.js"></script>
         <script>
         $(document).ready(function(){
-          $("#level0").treeview();
+          $("#level0").treeview( { collapsed: true } );
         });
         </script>
 
