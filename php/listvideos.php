@@ -51,7 +51,10 @@ $PATHTOREPOSITORY = 'repository' ;
                 }
                 else
                 {
-                        echo "<li>$file $file[ -10, -1 ] <li>";                
+                    $sub = '';
+                    if ( strlen( $file ) > 11 )
+                        $sub = substr  ( $file , strlen( $file ) - 11, strlen( $file ) -1 ) ;
+                        echo "<li>$file  $sub<li>";                
                 }
             }
         }
