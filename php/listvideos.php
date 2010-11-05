@@ -35,11 +35,15 @@ chdir   ( $PATHTOREPOSITORY )    ;
         {
            if( is_dir( $entry) )
            {
-               writeEntry( $entry )                     ;
-               $newd = dir( $entry )                    ;
-               var_dump ( $newd )                       ;
-               //parseDir( $newd )                        ;
-           }
+                $e = $entry . '' ;   // transtyping
+                if ( $e != '.' && $e != '..' && $e[ 0 ] != '.' )
+                {
+                   writeEntry( $entry )                     ;
+                   $newd = dir( $entry )                    ;
+                   //var_dump ( $newd )                       ;
+                   parseDir( $newd )                        ;
+                }
+            }
         }
         echo "</ul>\n"                                  ;
         $d->close()                                     ;    
