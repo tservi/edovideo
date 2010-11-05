@@ -34,6 +34,8 @@ $PATHTOREPOSITORY = 'repository' ;
         echo "<ul>\n"                                       ;
         echo "<li>"; var_dump ( $d ) ; echo "</li>"         ;
         $entry = $d->read()                                 ;
+        echo "<li>"; var_dump ( $entry ) ; echo "</li>"         ;
+        /*
         while (false !== $entry )
         {
            if( is_dir( $entry) )
@@ -46,6 +48,7 @@ $PATHTOREPOSITORY = 'repository' ;
                 }
             }
         }
+        */
         echo "</ul>\n"                                  ;
         $d->close()                                     ;      
     }
