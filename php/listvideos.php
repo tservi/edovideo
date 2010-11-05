@@ -19,13 +19,21 @@ chdir   ( $PATHTOREPOSITORY )    ;
     <body>
 <?php
 
+    function writeEntry( $e )
+    {
+        if ( $e != '.' or $e != '..' or $e[ 1 ] != '.' )
+            {
+                echo $e  . "\n" ;
+            }
+    }
+
     echo "<!-- " . getcwd() . " -->\n";
     $d = dir( '.' );
     echo "Pointeur : " . $d->handle . "\n";
     echo "Chemin : " . $d->path . "\n";
     while (false !== ($entry = $d->read()))
     {
-       echo $entry . "\n";
+       writeEntry( $entry ) ;
     }
     $d->close();
 
