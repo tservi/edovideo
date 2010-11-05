@@ -42,9 +42,8 @@ $PATHTOREPOSITORY = 'repository' ;
                 if ( $e != '.' && $e != '..' && $e[ 0 ] != '.' )
                 {
                    writeEntry( $entry )                     ;
-                   $newd = dir( $entry )                    ;
                    //var_dump ( $newd )                       ;
-                   parseDir( $newd )                        ;
+                   parseDir( './' . $entry )                        ;
                 }
             }
         }
