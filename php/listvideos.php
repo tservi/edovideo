@@ -96,7 +96,7 @@ $PATHTOREPOSITORY = 'repository' ;
       <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
       <object id="flash_fallback_1" class="vjs-flash-fallback" width="640" height="264" type="application/x-shockwave-flash" 
         data="flowplayer-3.2.1.swf">
-        <param name="movie" value="flowplayer-3.2.1.swf" />
+        <param name="movie" value="flowplayer/flowplayer-3.2.5.swf" />
         <param name="allowfullscreen" value="true" />
         <param name="flashvars" 
           value='config={"playlist":["<?php echo $thumb ; ?>", {"url": "<?php echo $film ; ?>","autoPlay":false,"autoBuffering":false}]}' />
