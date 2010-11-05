@@ -9,5 +9,18 @@
 
 $PATHTOREPOSITORY = 'repository' ;
 
+chdir   ( $PATHTOREPOSITORY )    ;
 
 ?>
+<html>
+    <head>
+        <title>Edovideo</title>
+    </head>
+    <body>
+<?php
+
+    echo getcwd();
+
+?>
+    </body>
+</html>
