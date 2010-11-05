@@ -13,8 +13,23 @@ $PATHTOREPOSITORY = 'repository' ;
 <html>
     <head>
         <title>Edovideo</title>
+        
+        <!-- thank you jQuery http://docs.jquery.com/Plugins/Treeview -->
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <link rel="stylesheet" href="http://jquery.bassistance.de/treeview/demo/screen.css" type="text/css" />
+        <link rel="stylesheet" href="http://jquery.bassistance.de/treeview/jquery.treeview.css" type="text/css" />
+        <script type="text/javascript" src="http://jquery.bassistance.de/treeview/jquery.treeview.js"></script>
+        <script>
+        $(document).ready(function(){
+          $("#level0").treeview();
+        });
+        </script>
+
     </head>
     <body>
+
+<!-- treestructure begins here... -->
+<ul id="level0">
 <?php
 
 
@@ -42,13 +57,10 @@ $PATHTOREPOSITORY = 'repository' ;
         }
         closedir( $dh );    
     } 
-
-    //chdir   ( $PATHTOREPOSITORY )    ;   
-    //echo "<!-- " . getcwd() . " -->\n"                  ;
-    //echo "Pointeur : " . $d->handle . "\n";
-    //echo "Chemin : " . $d->path . "\n";
-    //parseDir( $PATHTOREPOSITORY )                                      ;    
+    
     getDirectory ( $PATHTOREPOSITORY )                                      ;    
 ?>
+</ul>
+<!-- treestructure finishes here -->
     </body>
 </html>
