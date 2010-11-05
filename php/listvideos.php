@@ -53,7 +53,8 @@ $PATHTOREPOSITORY = 'repository' ;
                 {
                     $sub = '';
                     if ( strlen( $file ) > 11 )
-                        $sub = substr  ( $file , strlen( $file ) - 11, strlen( $file ) -1 ) ;
+                        $sub = substr  ( $file , strlen( $file ) - 10, strlen( $file ) -1 ) ;
+                    if ( $sub != '.thumb.jpg')
                         echo "<li>$file  $sub<li>";                
                 }
             }
