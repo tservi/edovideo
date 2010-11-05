@@ -24,14 +24,14 @@ chdir   ( $PATHTOREPOSITORY )    ;
         $e = $entry . '' ;   // transtyping
         if ( $e != '.' or $e != '..' or $e[ 1 ] != '.' )
             {
-                echo $e  . "\n" ;
+                echo $e  . "<br/>\n" ;
             }
     }
 
     echo "<!-- " . getcwd() . " -->\n";
     $d = dir( '.' );
-    echo "Pointeur : " . $d->handle . "\n";
-    echo "Chemin : " . $d->path . "\n";
+    //echo "Pointeur : " . $d->handle . "\n";
+    //echo "Chemin : " . $d->path . "\n";
     while (false !== ($entry = $d->read()))
     {
        writeEntry( $entry ) ;
