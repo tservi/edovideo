@@ -51,7 +51,7 @@ $PATHTOREPOSITORY = 'repository' ;
                 }
                 else
                 {
-                    echo "<li>$file<li>";                
+                        echo "<li>$file $file[ -10, -1 ] <li>";                
                 }
             }
         }
