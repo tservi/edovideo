@@ -32,12 +32,12 @@ chdir   ( $PATHTOREPOSITORY )    ;
     $d = dir( '.' )                                     ;
     //echo "Pointeur : " . $d->handle . "\n";
     //echo "Chemin : " . $d->path . "\n";
-    echo "<ul>"                                         ;
+    echo "<ul>\n"                                       ;
     while (false !== ($entry = $d->read()))
     {
        writeEntry( $entry )                             ;
     }
-    echo "</ul>"                                        ;
+    echo "</ul>\n"                                      ;
     $d->close()                                         ;
 
 ?>
