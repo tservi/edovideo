@@ -76,9 +76,13 @@ $PATHTOREPOSITORY = 'repository' ;
 <?php
     if( isset( $_REQUEST[ 'showvideo' ] ) )
     {
-        var_dump ( $_SERVER ) ;
-        $film  = $_SERVER[ 'HTTP_REFERER' ] . '/' . substr  ( $_REQUEST[ 'showvideo' ] , 0 , strlen( $file ) - 10 ) ;
-        $thumb = $_SERVER[ 'HTTP_REFERER' ] . '/' . $_REQUEST[ 'showvideo' ] ;
+        //var_dump ( $_SERVER ) ;
+        $http  = "http://" . $_SERVER[ 'HTTP_HOST' ] . '/' ;
+        $explosion = explode( '/' , $_SERVER[ 'PHP_SELF' ] );
+        for ( $i= 0; $i < count( $explosion ) -1 , $i++ )
+            $http .= $explosion[ $i ] . '/';
+        $film  = $http . substr  ( $_REQUEST[ 'showvideo' ] , 0 , strlen( $file ) - 10 ) ;
+        $thumb = $http . $_REQUEST[ 'showvideo' ] ;
         ?>
 
  <!-- Begin VideoJS -->
