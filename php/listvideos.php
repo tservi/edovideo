@@ -76,6 +76,7 @@ $PATHTOREPOSITORY = 'repository' ;
 <?php
     if( isset( $_REQUEST[ 'showvideo' ] ) )
     {
+        var_dump ( $_SERVER ) ;
         $film = $_SERVER[ 'PHP_SELF' ] . '/' . substr  ( $_REQUEST[ 'showvideo' ] , 0 , strlen( $file ) - 11 ) ;
         $thumb = $_SERVER[ 'PHP_SELF' ] . '/' . $_REQUEST[ 'showvideo' ] ;
         ?>
@@ -87,8 +88,8 @@ $PATHTOREPOSITORY = 'repository' ;
       <source src="<?php echo $film ; ?>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
       <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
       <object id="flash_fallback_1" class="vjs-flash-fallback" width="640" height="264" type="application/x-shockwave-flash" 
-        data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
-        <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
+        data="flowplayer-3.2.1.swf">
+        <param name="movie" value="flowplayer-3.2.1.swf" />
         <param name="allowfullscreen" value="true" />
         <param name="flashvars" 
           value='config={"playlist":["<?php echo $thumb ; ?>", {"url": "<?php echo $film ; ?>","autoPlay":false,"autoBuffering":false}]}' />
