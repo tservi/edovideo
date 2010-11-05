@@ -28,18 +28,28 @@ chdir   ( $PATHTOREPOSITORY )    ;
             }
     }
 
+    function parseDir ( $d )
+    {
+        echo "<ul>\n"                                   ;
+        while (false !== ($entry = $d->read()))
+        {
+           if( is_dir( $entry) )
+           {
+               writeEntry( $entry )                     ;
+               $d = dir( $entry )                       ;
+               parseDir( $d )                           ;
+           }
+        }
+        echo "</ul>\n"                                  ;
+        $d->close()                                     ;    
+        
+    }
+    
     echo "<!-- " . getcwd() . " -->\n"                  ;
     $d = dir( '.' )                                     ;
     //echo "Pointeur : " . $d->handle . "\n";
     //echo "Chemin : " . $d->path . "\n";
-    echo "<ul>\n"                                       ;
-    while (false !== ($entry = $d->read()))
-    {
-       writeEntry( $entry )                             ;
-    }
-    echo "</ul>\n"                                      ;
-    $d->close()                                         ;
-
+    parseDir( $d )                                      ;    
 ?>
     </body>
 </html>
