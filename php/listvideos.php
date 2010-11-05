@@ -19,8 +19,9 @@ chdir   ( $PATHTOREPOSITORY )    ;
     <body>
 <?php
 
-    function writeEntry( $e )
+    function writeEntry( $entry )
     {
+        $e = $entry . '' ;   // transtyping
         if ( $e != '.' or $e != '..' or $e[ 1 ] != '.' )
             {
                 echo $e  . "\n" ;
