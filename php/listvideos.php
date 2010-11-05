@@ -32,6 +32,7 @@ chdir   ( $PATHTOREPOSITORY )    ;
     {
         echo "<ul>\n"                                   ;
         echo "<li>"; var_dump ( $d) ; echo "</li>"      ;
+        echo $d -> read()                               ;
         while (false !== ($entry = $d->read()))
         {
            if( is_dir( $entry) )
@@ -47,8 +48,7 @@ chdir   ( $PATHTOREPOSITORY )    ;
             }
         }
         echo "</ul>\n"                                  ;
-        $d->close()                                     ;    
-        
+        $d->close()                                     ;      
     }
     
     echo "<!-- " . getcwd() . " -->\n"                  ;
