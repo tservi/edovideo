@@ -35,7 +35,7 @@ $PATHTOREPOSITORY = 'repository' ;
 <br/>
 <h1>Edo Vidéo project</h1>
 <hr/>
-<div style="float: left; width:200px; display: inline;">
+<div style="float: left; width:300px; display: inline;">
 <!-- treestructure begins here... -->
 <ul id="level0">
 <?php
