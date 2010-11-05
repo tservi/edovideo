@@ -28,6 +28,7 @@ $PATHTOREPOSITORY = 'repository' ;
     </head>
     <body>
 
+<div style="float: left; width:200px; display: inline;">
 <!-- treestructure begins here... -->
 <ul id="level0">
 <?php
@@ -70,5 +71,19 @@ $PATHTOREPOSITORY = 'repository' ;
 ?>
 </ul>
 <!-- treestructure finishes here -->
+</div>
+
+<div style="float: left; display:inline;">
+<?php
+    if( isset( $_REQUEST[ 'showvideo' ] ) )
+    {
+        
+    }
+    else
+    {
+        echo "<h1>Sélectionnner une vidéo grâce au menu à gauche!</h1>" ; 
+    }
+?>
+</div>
     </body>
 </html>
