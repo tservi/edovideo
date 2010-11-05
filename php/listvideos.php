@@ -31,9 +31,10 @@ $PATHTOREPOSITORY = 'repository' ;
         chdir   ( $path )    ;   
         echo "<!-- " . getcwd() . " -->\n"                  ;
         $d = dir( '.' )                                     ;
-        echo "<ul>\n"                                   ;
-        echo "<li>"; var_dump ( $d ) ; echo "</li>"      ;
-        while (false !== ( $entry = $d->read() ) )
+        echo "<ul>\n"                                       ;
+        echo "<li>"; var_dump ( $d ) ; echo "</li>"         ;
+        $entry = $d->read()                                 ;
+        while (false !== $entry )
         {
            if( is_dir( $entry) )
            {
