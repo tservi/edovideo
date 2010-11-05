@@ -30,7 +30,11 @@ $PATHTOREPOSITORY = 'repository' ;
 
     </head>
     <body>
-
+<br/>
+<br/>
+<br/>
+<h1>Edo Vidéo project</h1>
+<hr/>
 <div style="float: left; width:200px; display: inline;">
 <!-- treestructure begins here... -->
 <ul id="level0">
@@ -76,7 +80,6 @@ $PATHTOREPOSITORY = 'repository' ;
 <?php
     if( isset( $_REQUEST[ 'showvideo' ] ) )
     {
-        //var_dump ( $_SERVER ) ;
         $http  = "http://" . $_SERVER[ 'HTTP_HOST' ] . '/' ;
         $explosion = explode( '/' , $_SERVER[ 'PHP_SELF' ] );
         for ( $i= 0; $i < count( $explosion ) -1 ; $i++ )
