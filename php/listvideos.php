@@ -77,8 +77,8 @@ $PATHTOREPOSITORY = 'repository' ;
     if( isset( $_REQUEST[ 'showvideo' ] ) )
     {
         //var_dump ( $_SERVER ) ;
-        $film  = 'http://' . $_SERVER[ 'SERVER_NAME' ] . $_SERVER[ 'HTTP_REFERER' ] . '/' . substr  ( $_REQUEST[ 'showvideo' ] , 0 , strlen( $file ) - 11 ) ;
-        $thumb = 'http://' . $_SERVER[ 'SERVER_NAME' ] . $_SERVER[ 'HTTP_REFERER' ] . '/' . $_REQUEST[ 'showvideo' ] ;
+        $film  = $_SERVER[ 'HTTP_REFERER' ] . '/' . substr  ( $_REQUEST[ 'showvideo' ] , 0 , strlen( $file ) - 11 ) ;
+        $thumb = $_SERVER[ 'HTTP_REFERER' ] . '/' . $_REQUEST[ 'showvideo' ] ;
         ?>
 
  <!-- Begin VideoJS -->
