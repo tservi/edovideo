@@ -22,7 +22,7 @@ chdir   ( $PATHTOREPOSITORY )    ;
     function writeEntry( $entry )
     {
         $e = $entry . '' ;   // transtyping
-        if ( $e != '.' && $e != '..' && $e[ 1 ] != '.' )
+        if ( $e != '.' && $e != '..' && $e[ 0 ] != '.' )
             {
                 echo $e  . "<br/>\n" ;
             }
