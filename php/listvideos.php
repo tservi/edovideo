@@ -36,8 +36,8 @@ chdir   ( $PATHTOREPOSITORY )    ;
            if( is_dir( $entry) )
            {
                writeEntry( $entry )                     ;
-               $d = dir( $entry )                       ;
-               parseDir( $d )                           ;
+               //$d = dir( $entry )                       ;
+               //parseDir( $d )                           ;
            }
         }
         echo "</ul>\n"                                  ;
