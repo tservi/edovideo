@@ -37,7 +37,8 @@ chdir   ( $PATHTOREPOSITORY )    ;
            {
                writeEntry( $entry )                     ;
                $newd = dir( $entry )                    ;
-               parseDir( $newd )                        ;
+               var_dump ( $newd )                       ;
+               //parseDir( $newd )                        ;
            }
         }
         echo "</ul>\n"                                  ;
