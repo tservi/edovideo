@@ -25,6 +25,9 @@ $PATHTOREPOSITORY = 'repository' ;
         });
         </script>
 
+        <!-- integration de http://videojs.com/ -->
+        <script type="text/javascript" src="video-js-1.1.3/video.js"></script>
+
     </head>
     <body>
 
@@ -73,7 +76,32 @@ $PATHTOREPOSITORY = 'repository' ;
 <?php
     if( isset( $_REQUEST[ 'showvideo' ] ) )
     {
+        $film = substr  ( $_REQUEST[ 'showvideo' ] , 0 , strlen( $file ) - 11 ) ;
+        $thumb = $_REQUEST[ 'showvideo' ] ;
+        ?>
+
+ <!-- Begin VideoJS -->
+  <div class="video-js-box">
+    <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
+    <video class="video-js" width="640" height="264" controls preload autoplay poster="<?php echo $thumb ; ?>">
+      <source src="<?php echo $film ; ?>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+      <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
+      <object id="flash_fallback_1" class="vjs-flash-fallback" width="640" height="264" type="application/x-shockwave-flash" 
+        data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
+        <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
+        <param name="allowfullscreen" value="true" />
+        <param name="flashvars" 
+          value='config={"playlist":["<?php echo $thumb ; ?>", {"url": "<?php echo $film ; ?>","autoPlay":false,"autoBuffering":false}]}' />
+        <!-- Image Fallback. Typically the same as the poster image. -->
+        <img src="<?php echo $thumb ; ?>" width="640" height="264" alt="Image" 
+          title="No video playback capabilities." />
+      </object>
+    </video>
+    <!-- Download links provided for devices that can't play video in the browser. -->
+  </div>
+  <!-- End VideoJS -->
         
+        <?php
     }
     else
     {
