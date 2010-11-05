@@ -56,8 +56,10 @@ $PATHTOREPOSITORY = 'repository' ;
                         { $sub = substr  ( $file , strlen( $file ) - 10, strlen( $file ) -1 ) ; }
                     if ( $sub == '.thumb.jpg')
                         { echo "<li><img src='$path/$file' /><li>\n"; }
-                    else
+                    /*
+                        else
                         { echo "<a href='$file'>$file</a>"; }
+                    */
                 }
             }
         }
