@@ -31,6 +31,7 @@ chdir   ( $PATHTOREPOSITORY )    ;
     function parseDir ( $d )
     {
         echo "<ul>\n"                                   ;
+        echo "<li>"; var_dump ( $d) ; echo "</li>"      ;
         while (false !== ($entry = $d->read()))
         {
            if( is_dir( $entry) )
