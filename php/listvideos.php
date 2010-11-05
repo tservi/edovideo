@@ -76,7 +76,7 @@ $PATHTOREPOSITORY = 'repository' ;
 <?php
     if( isset( $_REQUEST[ 'showvideo' ] ) )
     {
-        var_dump ( $_SERVER ) ;
+        //var_dump ( $_SERVER ) ;
         $film  = 'http://' . $_SERVER[ 'SERVER_NAME' ] . $_SERVER[ 'PHP_SELF' ] . '/' . substr  ( $_REQUEST[ 'showvideo' ] , 0 , strlen( $file ) - 11 ) ;
         $thumb = 'http://' . $_SERVER[ 'SERVER_NAME' ] . $_SERVER[ 'PHP_SELF' ] . '/' . $_REQUEST[ 'showvideo' ] ;
         ?>
