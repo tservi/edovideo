@@ -19,8 +19,8 @@ chdir   ( $PATHTOREPOSITORY )    ;
     <body>
 <?php
 
-    echo getcwd();
-
+    echo "<!-- " . getcwd() . " -->\n";
+    
 ?>
     </body>
 </html>
