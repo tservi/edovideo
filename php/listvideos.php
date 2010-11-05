@@ -33,8 +33,7 @@ $PATHTOREPOSITORY = 'repository' ;
         $d = dir( '.' )                                     ;
         echo "<ul>\n"                                   ;
         echo "<li>"; var_dump ( $d ) ; echo "</li>"      ;
-        echo "<li>"; var_dump ( $d -> read() ); echo "</li>";
-        while (false !== ($entry = $d->read()))
+        while (false !== ( $entry = $d->read() ) )
         {
            if( is_dir( $entry) )
            {
@@ -42,7 +41,6 @@ $PATHTOREPOSITORY = 'repository' ;
                 if ( $e != '.' && $e != '..' && $e[ 0 ] != '.' )
                 {
                    writeEntry( $entry )                     ;
-                   //var_dump ( $newd )                       ;
                    parseDir( './' . $entry )                        ;
                 }
             }
