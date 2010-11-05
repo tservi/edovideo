@@ -76,8 +76,8 @@ $PATHTOREPOSITORY = 'repository' ;
 <?php
     if( isset( $_REQUEST[ 'showvideo' ] ) )
     {
-        $film = substr  ( $_REQUEST[ 'showvideo' ] , 0 , strlen( $file ) - 11 ) ;
-        $thumb = $_REQUEST[ 'showvideo' ] ;
+        $film = $_SERVER[ 'PHP_SELF' ] . '/' . substr  ( $_REQUEST[ 'showvideo' ] , 0 , strlen( $file ) - 11 ) ;
+        $thumb = $_SERVER[ 'PHP_SELF' ] . '/' . $_REQUEST[ 'showvideo' ] ;
         ?>
 
  <!-- Begin VideoJS -->
