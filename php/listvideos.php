@@ -20,7 +20,15 @@ chdir   ( $PATHTOREPOSITORY )    ;
 <?php
 
     echo "<!-- " . getcwd() . " -->\n";
-    
+    $d = dir( '.' );
+    echo "Pointeur : " . $d->handle . "\n";
+    echo "Chemin : " . $d->path . "\n";
+    while (false !== ($entry = $d->read()))
+    {
+       echo $entry . "\n";
+    }
+    $d->close();
+
 ?>
     </body>
 </html>
